@@ -6,5 +6,6 @@ coverage
 docs
 reports/security
 *.log
+# Keep preview deployments sourced from GitHub branches.
 *.vsix
 *.md
