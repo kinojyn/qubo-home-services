@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" fill="none">
+  <rect width="800" height="800" fill="#F2F2F0"/>
+  <path d="M160 610V260L400 130L640 260V610" stroke="#A8A8A2" stroke-width="20" stroke-linejoin="round"/>
+  <rect x="292" y="325" width="216" height="216" rx="30" fill="#FFFFFF" stroke="#73736D" stroke-width="16" transform="rotate(-4 292 325)"/>
+  <circle cx="356" cy="423" r="22" fill="#D1D1CD"/>
+  <circle cx="448" cy="417" r="22" fill="#D1D1CD"/>
+  <path d="M343 525C390 475 423 564 469 502" stroke="#B42318" stroke-width="14" stroke-linecap="round" stroke-dasharray="18 20"/>
+  <text x="400" y="700" text-anchor="middle" fill="#565652" font-family="Arial, sans-serif" font-size="34" font-weight="700">SEGNAPOSTO · PRIMA</text>
+</svg>

@@ -1,0 +1,10 @@
+.env*
+content/*
+!content/.gitkeep
+.codebase-memory*
+coverage
+docs
+reports/security
+*.log
+*.vsix
+*.md

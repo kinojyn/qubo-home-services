@@ -1,0 +1,44 @@
+# Dependencies
+/node_modules
+
+# Next.js
+/.next
+/out
+
+# Testing
+/coverage
+/playwright-report
+/test-results
+.codebase-memory*
+
+# Environment files
+.env*
+!.env.example
+
+# Runtime data and local admin state
+#
+# These files contain credentials, personal data, drafts, and mutable runtime
+# content. They must never be committed or included in a deployment bundle.
+/content/*
+!/content/.gitkeep
+
+# Security reports generated locally
+/reports/security/*.json
+/reports/security/*.xml
+
+# Deployment
+.vercel
+
+# Logs
+*.log
+npm-debug.log*
+*.vsix
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+.idea
+.vscode

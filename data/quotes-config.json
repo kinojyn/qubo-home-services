@@ -1,0 +1,221 @@
+{
+  "categories": [
+    { "id": "idraulica", "name": "Riparazioni idrauliche", "icon": "Droplets", "order": 0 },
+    { "id": "montaggio-mobili", "name": "Montaggio mobili", "icon": "Armchair", "order": 1 },
+    {
+      "id": "installazioni-domestiche",
+      "name": "Installazioni domestiche",
+      "icon": "Home",
+      "order": 2
+    },
+    {
+      "id": "porte-serrature",
+      "name": "Porte e serrature",
+      "icon": "DoorOpen",
+      "order": 3
+    },
+    { "id": "elettricita", "name": "Interventi elettrici", "icon": "Zap", "order": 4 },
+    {
+      "id": "tuttofare",
+      "name": "Piccoli lavori tuttofare",
+      "icon": "Wrench",
+      "order": 5
+    }
+  ],
+  "services": [
+    {
+      "id": "riparazione-rubinetto",
+      "categoryId": "idraulica",
+      "name": "Riparazione o sostituzione rubinetto",
+      "description": "Lavello, lavabo, doccia, vasca o rubinetto esterno",
+      "basePrice": 50,
+      "questions": [],
+      "pricingRules": [],
+      "order": 0
+    },
+    {
+      "id": "riparazione-scarico",
+      "categoryId": "idraulica",
+      "name": "Riparazione e sturamento scarico",
+      "description": "Lavello, lavabo, doccia, vasca o WC",
+      "basePrice": 60,
+      "questions": [],
+      "pricingRules": [],
+      "order": 1
+    },
+    {
+      "id": "riparazione-perdita",
+      "categoryId": "idraulica",
+      "name": "Riparazione perdita d'acqua",
+      "description": "Tubazioni, raccordi e piccole perdite domestiche",
+      "basePrice": 70,
+      "questions": [],
+      "pricingRules": [],
+      "order": 2
+    },
+    {
+      "id": "montaggio-mobile-semplice",
+      "categoryId": "montaggio-mobili",
+      "name": "Montaggio mobile semplice",
+      "description": "Tavoli, sedie, comodini, scrivanie e piccoli complementi",
+      "basePrice": 45,
+      "questions": [],
+      "pricingRules": [],
+      "order": 0
+    },
+    {
+      "id": "montaggio-armadio",
+      "categoryId": "montaggio-mobili",
+      "name": "Montaggio armadio o cassettiera",
+      "description": "Montaggio e regolazione di armadi, cassettiere e mobili grandi",
+      "basePrice": 90,
+      "questions": [],
+      "pricingRules": [],
+      "order": 1
+    },
+    {
+      "id": "installazione-tv",
+      "categoryId": "installazioni-domestiche",
+      "name": "Installazione TV a parete",
+      "description": "Fissaggio supporto e montaggio TV (supporto fornito dal cliente)",
+      "basePrice": 60,
+      "questions": [],
+      "pricingRules": [],
+      "order": 0
+    },
+    {
+      "id": "installazione-tende",
+      "categoryId": "installazioni-domestiche",
+      "name": "Montaggio tende e bastoni",
+      "description": "Bastoni, binari e accessori per tende",
+      "basePrice": 45,
+      "questions": [],
+      "pricingRules": [],
+      "order": 1
+    },
+    {
+      "id": "fissaggio-mensole",
+      "categoryId": "installazioni-domestiche",
+      "name": "Fissaggio mensole e accessori",
+      "description": "Mensole, specchi e piccoli elementi domestici",
+      "basePrice": 35,
+      "questions": [],
+      "pricingRules": [],
+      "order": 2
+    },
+    {
+      "id": "regolazione-porta",
+      "categoryId": "porte-serrature",
+      "name": "Regolazione porta e cerniere",
+      "description": "Registrazione, allineamento e piccole sistemazioni",
+      "basePrice": 45,
+      "questions": [],
+      "pricingRules": [],
+      "order": 0
+    },
+    {
+      "id": "sostituzione-maniglia",
+      "categoryId": "porte-serrature",
+      "name": "Sostituzione maniglia",
+      "description": "Maniglie e accessori per porte interne",
+      "basePrice": 45,
+      "questions": [],
+      "pricingRules": [],
+      "order": 1
+    },
+    {
+      "id": "sostituzione-serratura",
+      "categoryId": "porte-serrature",
+      "name": "Sostituzione serratura",
+      "description": "Serrature domestiche non complesse",
+      "basePrice": 70,
+      "questions": [],
+      "pricingRules": [],
+      "order": 2
+    },
+    {
+      "id": "riparazione-interruttore",
+      "categoryId": "elettricita",
+      "name": "Riparazione interruttore o presa",
+      "description": "Sostituzione di interruttori, prese, placche e prese USB",
+      "basePrice": 40,
+      "questions": [],
+      "pricingRules": [],
+      "order": 0
+    },
+    {
+      "id": "installazione-luce",
+      "categoryId": "elettricita",
+      "name": "Montaggio lampadario, plafoniera o applique",
+      "description": "Installazione di punti luce domestici fino a 3 m",
+      "basePrice": 45,
+      "questions": [],
+      "pricingRules": [],
+      "order": 1
+    },
+    {
+      "id": "pittura-pareti",
+      "categoryId": "tuttofare",
+      "name": "Tinteggiatura pareti",
+      "description": "Prezzo di riferimento: 20 € per ogni m² di parete",
+      "basePrice": 20,
+      "questions": [
+        {
+          "id": "q-pittura-superficie",
+          "key": "superficieMq",
+          "label": "Superficie da tinteggiare (m²)",
+          "type": "number",
+          "options": [],
+          "required": true,
+          "order": 0
+        }
+      ],
+      "pricingRules": [
+        {
+          "id": "pr-pittura-mq",
+          "conditions": [],
+          "adjustments": [
+            {
+              "type": "per_unit",
+              "label": "Tinteggiatura per m² aggiuntivo",
+              "amount": 20,
+              "unitField": "superficieMq"
+            }
+          ]
+        },
+        {
+          "id": "pr-pittura-sconto",
+          "conditions": [{ "field": "superficieMq", "operator": "gt", "value": 100 }],
+          "adjustments": [
+            {
+              "type": "percentage",
+              "label": "Sconto 6% per superfici oltre 100 m²",
+              "amount": -6
+            }
+          ]
+        }
+      ],
+      "order": 0
+    },
+    {
+      "id": "ritocchi-pittura",
+      "categoryId": "tuttofare",
+      "name": "Ritocchi di pittura",
+      "description": "Piccoli ritocchi e ripristini localizzati",
+      "basePrice": 35,
+      "questions": [],
+      "pricingRules": [],
+      "order": 1
+    },
+    {
+      "id": "piccoli-lavori",
+      "categoryId": "tuttofare",
+      "name": "Piccoli lavori tuttofare",
+      "description": "Una lista di piccoli interventi nella stessa visita",
+      "basePrice": 40,
+      "questions": [],
+      "pricingRules": [],
+      "order": 2
+    }
+  ]
+}

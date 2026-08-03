@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run check",
+  "crons": [
+    {
+      "path": "/api/maintenance/retention",
+      "schedule": "0 3 * * *"
+    }
+  ],
+  "framework": "nextjs",
+  "installCommand": "npm ci"
+}

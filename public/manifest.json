@@ -1,0 +1,16 @@
+{
+  "name": "QUBO",
+  "short_name": "QUBO",
+  "description": "Piccole riparazioni, installazioni e lavori domestici in Friuli Venezia Giulia",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FF6B35",
+  "icons": [
+    {
+      "src": "/images/brand/qubo-logo.png",
+      "sizes": "990x990",
+      "type": "image/png"
+    }
+  ]
+}

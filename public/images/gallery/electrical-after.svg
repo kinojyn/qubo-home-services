@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" fill="none">
+  <rect width="800" height="800" fill="#F8F8F7"/>
+  <path d="M160 610V260L400 130L640 260V610" stroke="#D1D1CD" stroke-width="20" stroke-linejoin="round"/>
+  <rect x="292" y="325" width="216" height="216" rx="30" fill="#FFFFFF" stroke="#C2410C" stroke-width="16"/>
+  <circle cx="356" cy="420" r="22" fill="#C2410C"/>
+  <circle cx="444" cy="420" r="22" fill="#C2410C"/>
+  <path d="M350 500H450" stroke="#C2410C" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="400" cy="433" r="150" stroke="#C2410C" stroke-opacity="0.12" stroke-width="36"/>
+  <text x="400" y="700" text-anchor="middle" fill="#565652" font-family="Arial, sans-serif" font-size="34" font-weight="700">SEGNAPOSTO · DOPO</text>
+</svg>

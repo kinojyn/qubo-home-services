@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" fill="none">
+  <rect width="800" height="800" fill="#F2F2F0"/>
+  <path d="M250 610V180H550V610" stroke="#A8A8A2" stroke-width="26" stroke-linejoin="round"/>
+  <path d="M295 570L325 220L525 245L500 590L295 570Z" fill="#FFFFFF" stroke="#73736D" stroke-width="18"/>
+  <circle cx="462" cy="416" r="18" fill="#B42318"/>
+  <path d="M280 625L535 610" stroke="#B42318" stroke-width="14" stroke-linecap="round" stroke-dasharray="20 18"/>
+  <text x="400" y="700" text-anchor="middle" fill="#565652" font-family="Arial, sans-serif" font-size="34" font-weight="700">SEGNAPOSTO · PRIMA</text>
+</svg>

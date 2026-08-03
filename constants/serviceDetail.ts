@@ -1,0 +1,28 @@
+export const SERVICE_DETAIL_CONTENT = {
+  breadcrumbLabel: "Percorso pagina",
+  breadcrumbHomeLabel: "Home",
+  breadcrumbServicesLabel: "Servizi",
+  primaryCtaLabel: "Richiedi un preventivo",
+  primaryCtaHref: "/#preventivo",
+  secondaryCtaLabel: "Vedi tutti i servizi",
+  secondaryCtaHref: "/services",
+  benefitsEyebrow: "Perché è più semplice",
+  benefitsTitle: "Un piccolo lavoro, gestito con attenzione.",
+  benefitsDescription:
+    "Dalla prima richiesta alla conclusione dell'intervento, manteniamo ogni passaggio chiaro e facile da seguire.",
+  problemsEyebrow: "Possiamo aiutarti",
+  problemsTitle: "Situazioni comuni che gestiamo.",
+  problemsListLabel: "Esempi di interventi",
+  areaEyebrow: "Zona di servizio",
+  areaTitle: "Dove interveniamo",
+  areaName: "Friuli Venezia Giulia, Italia",
+  areaNote:
+    "La disponibilità viene sempre confermata dopo aver verificato zona e dettagli della richiesta.",
+  faqEyebrow: "Domande frequenti",
+  faqTitle: "Prima di richiedere il servizio.",
+  faqDescription: "Risposte semplici alle domande più comuni su questo tipo di intervento.",
+  relatedEyebrow: "Potrebbe servirti anche",
+  relatedTitle: "Altri piccoli lavori per la casa.",
+  relatedListLabel: "Servizi correlati",
+  relatedLinkLabel: "Scopri il servizio",
+} as const;

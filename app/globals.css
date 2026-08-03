@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+.floating-emergency-shell {
+  position: fixed;
+  right: max(24px, env(safe-area-inset-right));
+  bottom: max(24px, env(safe-area-inset-bottom));
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.floating-emergency-cta {
+  display: inline-flex;
+  min-height: 58px;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 24px 7px 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1;
+  text-decoration: none;
+  background: linear-gradient(135deg, #df4b0a 0%, #c63a05 55%, #a92d04 100%);
+  border: 1px solid rgb(255 255 255 / 32%);
+  border-radius: 999px;
+  box-shadow:
+    0 16px 36px rgb(168 45 4 / 26%),
+    0 5px 12px rgb(0 0 0 / 12%),
+    inset 0 1px 0 rgb(255 255 255 / 20%);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+.floating-emergency-cta:hover {
+  filter: saturate(1.08) brightness(1.04);
+  box-shadow:
+    0 20px 42px rgb(168 45 4 / 34%),
+    0 7px 16px rgb(0 0 0 / 14%),
+    inset 0 1px 0 rgb(255 255 255 / 24%);
+  transform: translateY(-3px);
+}
+
+.floating-emergency-cta:active {
+  transform: translateY(-1px) scale(0.985);
+}
+
+.floating-emergency-cta:focus-visible {
+  outline: 3px solid rgb(224 72 10 / 28%);
+  outline-offset: 4px;
+}
+
+.floating-emergency-icon {
+  position: relative;
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgb(255 255 255 / 14%);
+  border: 1px solid rgb(255 255 255 / 26%);
+  border-radius: 50%;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 18%);
+}
+
+.floating-emergency-status {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 9px;
+  height: 9px;
+  background: #ffd8c5;
+  border: 2px solid #c53a05;
+  border-radius: 50%;
+}
+
+.floating-emergency-label {
+  display: block;
+  padding-top: 1px;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 40rem) {
+  .floating-emergency-shell {
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(16px, env(safe-area-inset-bottom));
+  }
+
+  .floating-emergency-cta {
+    min-height: 54px;
+    gap: 10px;
+    padding: 6px 20px 6px 7px;
+    font-size: 14px;
+  }
+
+  .floating-emergency-icon {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+}
+@import "../styles/tokens.css";
+@import "../styles/theme.css";
+@import "../styles/elevation.css";
