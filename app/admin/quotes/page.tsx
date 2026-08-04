@@ -68,6 +68,7 @@ export default function AdminQuotesPage() {
                 <th className="px-4 py-3 font-medium text-zinc-300">Service</th>
                 <th className="px-4 py-3 font-medium text-zinc-300">Price</th>
                 <th className="px-4 py-3 font-medium text-zinc-300">Status</th>
+                <th className="px-4 py-3 font-medium text-zinc-300">Email</th>
                 <th className="px-4 py-3 font-medium text-zinc-300">Actions</th>
               </tr>
             </thead>
@@ -114,6 +115,20 @@ export default function AdminQuotesPage() {
                       }`}
                     >
                       {s.status}
+                    </span>
+                  </td>
+                  <td className="px-4 py-3">
+                    <span
+                      title={s.delivery?.error}
+                      className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${
+                        s.delivery?.status === "delivered"
+                          ? "bg-green-900/50 text-green-300"
+                          : s.delivery?.status === "failed"
+                            ? "bg-red-900/50 text-red-300"
+                            : "bg-zinc-800 text-zinc-400"
+                      }`}
+                    >
+                      {s.delivery?.status ?? "not tracked"}
                     </span>
                   </td>
                   <td className="px-4 py-3">

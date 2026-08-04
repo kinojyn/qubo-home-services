@@ -23,7 +23,7 @@ Configure this variable in the Vercel **Production** environment:
 
 ```text
 NEXT_PUBLIC_SITE_URL=https://your-public-domain.example
-NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your-web3forms-access-key
+WEB3FORMS_ACCESS_KEY=your-web3forms-access-key
 DATABASE_URL=postgresql://user:password@host/database?sslmode=require
 ADMIN_JWT_SECRET=a-random-secret-with-at-least-32-characters
 CRON_SECRET=a-different-random-secret-with-at-least-32-characters

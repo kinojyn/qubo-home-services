@@ -1,13 +1,14 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { getSession } from "@/lib/admin/auth";
-import { addSubmission, getSubmissions } from "@/lib/admin/quoteStorage";
+import { addSubmission, getSubmissions, updateSubmissionDelivery } from "@/lib/admin/quoteStorage";
 import type { QuoteSubmission } from "@/types/quotes";
 import { calculatePrice } from "@/lib/quotes/ruleEngine";
 import { getQuotesData } from "@/lib/admin/quoteStorage";
 import { enforceRateLimit, rejectUntrustedRequest, safeErrorResponse } from "@/lib/security";
 import { findFvgLocality, formatFvgLocality } from "@/data/fvgLocalities";
 import { PRIVACY_POLICY_VERSION } from "@/constants/privacy";
+import { sendQuoteToWeb3Forms } from "@/services/web3forms";
 
 const submissionSchema = z
   .object({
@@ -136,11 +137,31 @@ export async function POST(request: Request) {
       travelDistanceKm: locality.distance,
       travelOffice: "Cervignano del Friuli",
       status: "new",
+      delivery: { status: "pending" },
     };
 
     await addSubmission(submission);
 
-    return NextResponse.json({ success: true, id: submission.id });
+    try {
+      await sendQuoteToWeb3Forms(submission);
+      await updateSubmissionDelivery(submission.id, {
+        status: "delivered",
+        attemptedAt: Date.now(),
+      });
+      return NextResponse.json({ success: true, delivered: true, id: submission.id });
+    } catch (error) {
+      const message =
+        error instanceof Error
+          ? error.message.slice(0, 200)
+          : "The notification provider rejected the request.";
+      console.error("Quote notification delivery failed", { id: submission.id, message });
+      await updateSubmissionDelivery(submission.id, {
+        status: "failed",
+        attemptedAt: Date.now(),
+        error: message,
+      });
+      return NextResponse.json({ success: true, delivered: false, id: submission.id });
+    }
   } catch {
     return safeErrorResponse();
   }

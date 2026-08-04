@@ -57,6 +57,21 @@ export async function updateSubmissionStatus(
   return updated;
 }
 
+export async function updateSubmissionDelivery(
+  id: string,
+  delivery: NonNullable<QuoteSubmission["delivery"]>,
+): Promise<boolean> {
+  let updated = false;
+  await mutatePublished<QuoteSubmission[]>(SUBMISSIONS_KEY, [], (submissions) =>
+    submissions.map((submission) => {
+      if (submission.id !== id) return submission;
+      updated = true;
+      return { ...submission, delivery };
+    }),
+  );
+  return updated;
+}
+
 export async function pruneExpiredSubmissions(createdBefore: number): Promise<number> {
   let removed = 0;
   await mutatePublished<QuoteSubmission[]>(SUBMISSIONS_KEY, [], (submissions) => {

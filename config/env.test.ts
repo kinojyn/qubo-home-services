@@ -6,7 +6,7 @@ const PRODUCTION_SECURITY = {
   ADMIN_JWT_SECRET: "a".repeat(48),
   CRON_SECRET: "c".repeat(48),
   DATABASE_URL: "postgresql://user:password@example.com:5432/qubo",
-  NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: "test-access-key",
+  WEB3FORMS_ACCESS_KEY: "test-access-key",
 } as const;
 
 describe("resolveDeploymentEnvironment", () => {
@@ -67,7 +67,7 @@ describe("resolveDeploymentEnvironment", () => {
     ).toThrow("Missing required production configuration");
   });
 
-  it("requires the Web3Forms public form key in production", () => {
+  it("requires the Web3Forms server key in production", () => {
     expect(() =>
       resolveDeploymentEnvironment({
         ADMIN_JWT_SECRET: PRODUCTION_SECURITY.ADMIN_JWT_SECRET,
@@ -76,7 +76,7 @@ describe("resolveDeploymentEnvironment", () => {
         NEXT_PUBLIC_SITE_URL: "https://qubo.example",
         VERCEL_ENV: "production",
       }),
-    ).toThrow("NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY");
+    ).toThrow("WEB3FORMS_ACCESS_KEY");
   });
 
   it("rejects URLs containing paths, credentials, queries, or fragments", () => {

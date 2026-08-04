@@ -89,6 +89,11 @@ export interface QuoteSubmission {
   privacyPolicyVersion: string;
   consentAt: number;
   status: "new" | "contacted" | "accepted" | "rejected";
+  delivery?: {
+    status: "pending" | "delivered" | "failed";
+    attemptedAt?: number;
+    error?: string;
+  };
 }
 
 export interface PriceBreakdownItem {

@@ -5,7 +5,7 @@ const environmentSchema = z.object({
   CRON_SECRET: z.string().trim().optional(),
   DATABASE_URL: z.string().trim().url().optional(),
   NEXT_PUBLIC_SITE_URL: z.string().trim().url().optional(),
-  NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: z.string().trim().min(1).optional(),
+  WEB3FORMS_ACCESS_KEY: z.string().trim().min(1).optional(),
   VERCEL_ENV: z.enum(["development", "preview", "production"]).optional(),
   VERCEL_URL: z.string().trim().min(1).optional(),
 });
@@ -34,7 +34,7 @@ export function resolveDeploymentEnvironment(input: unknown) {
         "ADMIN_JWT_SECRET (32+ characters)",
       (!environment.CRON_SECRET || environment.CRON_SECRET.length < 32) &&
         "CRON_SECRET (32+ characters)",
-      !environment.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY && "NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY",
+      !environment.WEB3FORMS_ACCESS_KEY && "WEB3FORMS_ACCESS_KEY",
     ].filter(Boolean);
 
     if (missing.length > 0) {
@@ -67,7 +67,7 @@ export const deploymentEnvironment = resolveDeploymentEnvironment({
   CRON_SECRET: process.env.CRON_SECRET,
   DATABASE_URL: process.env.DATABASE_URL,
   NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
-  NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+  WEB3FORMS_ACCESS_KEY: process.env.WEB3FORMS_ACCESS_KEY,
   VERCEL_ENV: process.env.VERCEL_ENV,
   VERCEL_URL: process.env.VERCEL_URL,
 });

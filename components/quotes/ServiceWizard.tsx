@@ -9,7 +9,6 @@ import { findFvgLocality, formatFvgLocality, type FvgLocality } from "@/data/fvg
 import { calculatePrice } from "@/lib/quotes/ruleEngine";
 import { PRIVACY_POLICY_VERSION } from "@/constants/privacy";
 import { localizeQuotesData } from "@/locales/quotes";
-import { sendQuoteToWeb3Forms } from "@/services/web3forms";
 import type { QuoteCategory, QuoteService, QuoteSubmission } from "@/types/quotes";
 
 export type QuotesConfig = {
@@ -351,14 +350,13 @@ export function ServiceWizard({
         method: "POST",
       });
       const result = (await response.json().catch(() => null)) as {
+        delivered?: boolean;
         error?: string;
         id?: string;
         success?: boolean;
       } | null;
       if (!response.ok) throw new Error(result?.error ?? ui.failed);
-      try {
-        await sendQuoteToWeb3Forms({ ...submission, id: result?.id ?? submission.id });
-      } catch {
+      if (result?.delivered === false) {
         setSubmitError(ui.deliveryWarning);
       }
       setSubmitted(true);

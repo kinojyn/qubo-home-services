@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { href: "/admin", label: "Dashboard", icon: "◉" },
   { href: "/admin/editor", label: "Visual Editor", icon: "✎" },
   { href: "/admin/quotes", label: "Quote Requests", icon: "€" },
+  { href: "/admin/forms", label: "Form Requests", icon: "✉" },
   { href: "/admin/reviews", label: "Reviews", icon: "★" },
   { href: "/admin/media", label: "Media Library", icon: "▣" },
   { href: "/admin/versions", label: "Version History", icon: "↺" },
