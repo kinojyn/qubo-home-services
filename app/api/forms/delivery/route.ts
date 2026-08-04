@@ -39,6 +39,13 @@ export async function POST(request: Request) {
   }
 
   try {
+    if (status === "failed") {
+      console.error("Browser notification delivery failed", {
+        id,
+        kind,
+        message: error ?? "Unknown browser delivery error.",
+      });
+    }
     const delivery = {
       status,
       attemptedAt: Date.now(),
