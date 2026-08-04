@@ -6,7 +6,7 @@ const isLocalDevelopment = process.env.NODE_ENV === "development";
 const CONTENT_SECURITY_POLICY = [
   "default-src 'self'",
   "base-uri 'self'",
-  `connect-src 'self'${isDevelopment ? " ws:" : ""}`,
+  `connect-src 'self' https://api.web3forms.com${isDevelopment ? " ws:" : ""}`,
   "font-src 'self' data:",
   "form-action 'self'",
   "frame-ancestors 'none'",

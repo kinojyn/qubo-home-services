@@ -9,6 +9,9 @@ describe("Next security headers", () => {
 
     expect(entries?.[0]?.source).toBe("/(.*)");
     expect(headers.get("Content-Security-Policy")).toContain("frame-ancestors 'none'");
+    expect(headers.get("Content-Security-Policy")).toContain(
+      "connect-src 'self' https://api.web3forms.com",
+    );
     expect(headers.get("Permissions-Policy")).toContain("camera=()");
     expect(headers.get("Referrer-Policy")).toBe("strict-origin-when-cross-origin");
     expect(headers.get("Strict-Transport-Security")).toBe(
