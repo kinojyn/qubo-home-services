@@ -76,11 +76,12 @@ For ordinary local development, set:
 
 ```text
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
-WEB3FORMS_ACCESS_KEY=your-web3forms-access-key
+NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your-web3forms-access-key
 ```
 
-`WEB3FORMS_ACCESS_KEY` enables server-side delivery through Web3Forms. Keep the key private; the
-recipient email remains verified and configured in the Web3Forms account.
+`NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` enables browser-side notification delivery through Web3Forms.
+The public form identifier does not expose the verified recipient email. Every request is saved in
+the application database before notification delivery is attempted.
 
 Local development uses ignored files in `content/`. To test the production storage path locally,
 also configure `DATABASE_URL` with a disposable PostgreSQL database.

@@ -9,6 +9,8 @@ import { findFvgLocality, formatFvgLocality, type FvgLocality } from "@/data/fvg
 import { calculatePrice } from "@/lib/quotes/ruleEngine";
 import { PRIVACY_POLICY_VERSION } from "@/constants/privacy";
 import { localizeQuotesData } from "@/locales/quotes";
+import { reportFormDelivery } from "@/services/reportFormDelivery";
+import { sendQuoteToWeb3Forms } from "@/services/web3forms";
 import type { QuoteCategory, QuoteService, QuoteSubmission } from "@/types/quotes";
 
 export type QuotesConfig = {
@@ -350,13 +352,32 @@ export function ServiceWizard({
         method: "POST",
       });
       const result = (await response.json().catch(() => null)) as {
-        delivered?: boolean;
+        deliveryToken?: string;
         error?: string;
         id?: string;
         success?: boolean;
       } | null;
       if (!response.ok) throw new Error(result?.error ?? ui.failed);
-      if (result?.delivered === false) {
+      try {
+        await sendQuoteToWeb3Forms({ ...submission, id: result?.id ?? submission.id });
+        if (result?.id && result.deliveryToken) {
+          await reportFormDelivery({
+            id: result.id,
+            kind: "quote",
+            status: "delivered",
+            token: result.deliveryToken,
+          });
+        }
+      } catch (error) {
+        if (result?.id && result.deliveryToken) {
+          await reportFormDelivery({
+            error: error instanceof Error ? error.message.slice(0, 200) : undefined,
+            id: result.id,
+            kind: "quote",
+            status: "failed",
+            token: result.deliveryToken,
+          });
+        }
         setSubmitError(ui.deliveryWarning);
       }
       setSubmitted(true);

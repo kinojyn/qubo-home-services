@@ -2,11 +2,11 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { Web3FormsError, sendQuoteToWeb3Forms, sendToWeb3Forms } from "./web3forms";
 
-const originalAccessKey = process.env.WEB3FORMS_ACCESS_KEY;
+const originalAccessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
-describe("Web3Forms server delivery", () => {
+describe("Web3Forms browser delivery", () => {
   beforeEach(() => {
-    process.env.WEB3FORMS_ACCESS_KEY = "server-form-key";
+    process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY = "public-form-key";
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue({
@@ -18,8 +18,8 @@ describe("Web3Forms server delivery", () => {
 
   afterEach(() => {
     vi.unstubAllGlobals();
-    if (originalAccessKey === undefined) delete process.env.WEB3FORMS_ACCESS_KEY;
-    else process.env.WEB3FORMS_ACCESS_KEY = originalAccessKey;
+    if (originalAccessKey === undefined) delete process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    else process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY = originalAccessKey;
   });
 
   it("submits a validated contact form directly to Web3Forms", async () => {
@@ -41,7 +41,7 @@ describe("Web3Forms server delivery", () => {
     );
     const request = vi.mocked(fetch).mock.calls[0]?.[1] as RequestInit;
     expect(JSON.parse(String(request.body))).toMatchObject({
-      access_key: "server-form-key",
+      access_key: "public-form-key",
       botcheck: false,
       from_name: "QUBO",
       subject: "QUBO — Informazioni",
@@ -99,7 +99,7 @@ describe("Web3Forms server delivery", () => {
 
     const request = vi.mocked(fetch).mock.calls[0]?.[1] as RequestInit;
     expect(JSON.parse(String(request.body))).toMatchObject({
-      access_key: "server-form-key",
+      access_key: "public-form-key",
       botcheck: false,
       subject: "Nuova richiesta preventivo — tinteggiatura-pareti",
     });

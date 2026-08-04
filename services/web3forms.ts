@@ -14,7 +14,7 @@ export class Web3FormsError extends Error {
 }
 
 function getAccessKey() {
-  const accessKey = process.env.WEB3FORMS_ACCESS_KEY?.trim();
+  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY?.trim();
   if (!accessKey) {
     throw new Web3FormsError("Form delivery is not configured.");
   }

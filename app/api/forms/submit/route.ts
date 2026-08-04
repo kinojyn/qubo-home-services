@@ -8,10 +8,9 @@ import {
   addFormSubmission,
   getFormSubmissions,
   type StoredFormSubmission,
-  updateFormSubmissionDelivery,
 } from "@/lib/admin/formSubmissionStorage";
+import { createDeliveryToken } from "@/lib/forms/deliveryToken";
 import { enforceRateLimit, rejectUntrustedRequest, safeErrorResponse } from "@/lib/security";
-import { sendToWeb3Forms } from "@/services/web3forms";
 
 export const runtime = "nodejs";
 
@@ -22,12 +21,6 @@ const requestSchema = z
     website: z.string().max(200).optional().default(""),
   })
   .strict();
-
-function deliveryErrorMessage(error: unknown) {
-  return error instanceof Error
-    ? error.message.slice(0, 200)
-    : "The notification provider rejected the request.";
-}
 
 export async function GET() {
   const session = await getSession();
@@ -77,28 +70,12 @@ export async function POST(request: Request) {
     } as StoredFormSubmission;
 
     await addFormSubmission(submission);
-
-    try {
-      await sendToWeb3Forms(
-        submission.form === "contact"
-          ? { form: "contact", data: submission.data }
-          : { form: "estimate", data: submission.data },
-      );
-      await updateFormSubmissionDelivery(id, {
-        status: "delivered",
-        attemptedAt: Date.now(),
-      });
-      return NextResponse.json({ success: true, saved: true, delivered: true, id });
-    } catch (error) {
-      const message = deliveryErrorMessage(error);
-      console.error("Form notification delivery failed", { id, message });
-      await updateFormSubmissionDelivery(id, {
-        status: "failed",
-        attemptedAt: Date.now(),
-        error: message,
-      });
-      return NextResponse.json({ success: true, saved: true, delivered: false, id });
-    }
+    return NextResponse.json({
+      success: true,
+      saved: true,
+      id,
+      deliveryToken: createDeliveryToken("form", id),
+    });
   } catch {
     return safeErrorResponse();
   }
