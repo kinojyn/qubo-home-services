@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import { FloatingCta, FloatingOrbs, ScrollProgress } from "@/components/feedback";
+import { VercelAnalytics } from "@/components/analytics/VercelAnalytics";
 import { CookieConsentBanner } from "@/components/layout/CookieConsentBanner";
 import { CookiePreferencesModal } from "@/components/layout/CookiePreferencesModal";
 import { Footer } from "@/components/layout/Footer";
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <Footer />
               <CookieConsentBanner />
               <CookiePreferencesModal />
+              <VercelAnalytics />
             </CookieProvider>
           </SettingsProvider>
         </LocaleProvider>

@@ -121,7 +121,9 @@ export function ServicePageHero({ service }: ServicePageHeroProps) {
               alt={service.title}
               className="h-auto w-full"
               height={1024}
+              fetchPriority="high"
               priority
+              sizes="(max-width: 767px) 100vw, (max-width: 1279px) 62vw, 768px"
               src={SERVICE_SHOWCASE_IMAGES[service.slug]}
               width={1536}
             />

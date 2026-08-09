@@ -61,7 +61,7 @@ export async function POST(request: Request) {
       updatedAt: now,
       status: body.status ?? "visible",
       pinned: body.pinned ?? false,
-      badges: body.badges ?? ["verified"],
+      badges: body.badges ?? [],
       avatar: body.avatar,
       provider: body.provider ?? "manual",
       googleReviewId: body.googleReviewId,

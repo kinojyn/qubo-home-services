@@ -12,6 +12,7 @@ const STATIC_ROUTES: ReadonlyArray<{
 }> = [
   { path: "/", changeFrequency: "weekly", priority: 1 },
   { path: "/services", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/richiedi-preventivo", changeFrequency: "monthly", priority: 0.8 },
   { path: "/about", changeFrequency: "yearly", priority: 0.6 },
   { path: "/contact", changeFrequency: "yearly", priority: 0.7 },
   { path: "/gallery", changeFrequency: "monthly", priority: 0.7 },

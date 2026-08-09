@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import type { Metadata } from "next";
 
 import { getSession } from "@/lib/admin/auth";
 import { getDraft } from "@/lib/admin/content";
@@ -9,6 +10,14 @@ import { initStorage } from "@/lib/admin/storage";
 
 type AdminLayoutProps = {
   children: ReactNode;
+};
+
+export const metadata: Metadata = {
+  title: "Admin",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default async function AdminLayout({ children }: AdminLayoutProps) {

@@ -19,7 +19,7 @@ export interface HeroTrustIndicator {
 export const HERO_CONTENT: Record<Locale, HeroContent> = {
   it: {
     description:
-      "Piccole riparazioni domestiche, risolte da un unico team senza complicazioni. Semplice da richiedere. Facile da gestire.",
+      "Piccoli lavori domestici, montaggi e installazioni a Cervignano del Friuli e nelle località vicine. Semplice da richiedere. Facile da gestire.",
     emergencyCtaHref: "#contatti",
     emergencyCtaLabel: "Aiuto urgente",
     headlineFirstLine: "Una chiamata.",

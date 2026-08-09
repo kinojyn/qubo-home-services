@@ -2,6 +2,39 @@ import type { ServiceArea } from "@/features/serviceAreas/types";
 
 export const SERVICE_AREAS = [
   {
+    slug: "cervignano-del-friuli",
+    city: "Cervignano del Friuli",
+    province: "Udine",
+    headline: "Piccoli lavori di casa a Cervignano del Friuli, organizzati con chiarezza.",
+    introduction:
+      "A Cervignano del Friuli raccogliamo piccoli lavori domestici, montaggi e installazioni leggere in un'unica richiesta. Verifichiamo sempre località, disponibilità e fattibilità prima di confermare l'intervento.",
+    localContext:
+      "Cervignano del Friuli è il nostro principale punto di riferimento. Per le località vicine, indicare comune, frazione e dettagli del lavoro ci aiuta a valutare accesso, materiali e organizzazione prima dell'appuntamento.",
+    nearbyAreas: ["Ruda", "Aquileia", "Terzo d'Aquileia", "Villesse"],
+    benefits: [
+      {
+        title: "Un unico punto di partenza",
+        description:
+          "Descrivi più piccoli lavori nella stessa richiesta e ricevi una prima valutazione organizzata.",
+      },
+      {
+        title: "Disponibilità verificata",
+        description:
+          "Confermiamo copertura, tempi e fattibilità in base alla località e al tipo di intervento.",
+      },
+      {
+        title: "Dettagli prima della visita",
+        description:
+          "Foto, misure e materiali disponibili aiutano a preparare correttamente il prossimo passo.",
+      },
+    ],
+    metadata: {
+      title: "Piccole riparazioni a Cervignano del Friuli",
+      description:
+        "Piccoli lavori domestici, montaggi e installazioni a Cervignano del Friuli e nelle località vicine, con disponibilità verificata per ogni richiesta.",
+    },
+  },
+  {
     slug: "udine",
     city: "Udine",
     province: "Udine",

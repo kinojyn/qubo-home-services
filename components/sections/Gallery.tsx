@@ -3,6 +3,7 @@
 import { motion, type Variants, useReducedMotion } from "framer-motion";
 import { Expand } from "lucide-react";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
 import { GalleryImagePanel } from "@/components/sections/GalleryImagePanel";
@@ -183,6 +184,12 @@ export function Gallery() {
               </motion.li>
             ))}
           </motion.ul>
+          <Link
+            className="mt-8 inline-flex min-h-touch-target items-center rounded-lg border border-border-default bg-surface px-4 text-sm font-semibold text-text-primary transition-colors hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+            href="/gallery"
+          >
+            {content.pageLinkLabel}
+          </Link>
         </motion.div>
       </Container>
 

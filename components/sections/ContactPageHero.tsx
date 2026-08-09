@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { siteConfig } from "@/config/site";
 import { MOTION_SEQUENCES, MOTION_TRANSITIONS } from "@/constants/motion";
 import { useLocale } from "@/contexts/LocaleContext";
 import { CONTACT_PAGE_CONTENT } from "@/locales/contact";
@@ -155,6 +156,20 @@ export function ContactPageHero() {
                     {content.areaNote}
                   </p>
                 </div>
+              </div>
+              <div className="grid gap-2 border-t border-background-primary pt-6 text-sm">
+                <a
+                  className="font-semibold text-background-primary underline decoration-accent underline-offset-4"
+                  href={`tel:${siteConfig.contact.phone}`}
+                >
+                  {siteConfig.contact.phoneDisplay}
+                </a>
+                <a
+                  className="break-all text-sm opacity-[var(--ds-opacity-muted)] underline decoration-accent underline-offset-4"
+                  href={`mailto:${siteConfig.contact.email}`}
+                >
+                  {siteConfig.contact.email}
+                </a>
               </div>
             </div>
           </motion.aside>

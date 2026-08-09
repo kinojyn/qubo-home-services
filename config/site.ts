@@ -4,9 +4,9 @@ export const siteConfig = {
   name: "QUBO",
   shortName: "QUBO",
   brandMeaning: "Qualità · Urgenza · Benfatto · Organizzato",
-  homeTitle: "Riparazioni e servizi domestici in Friuli",
+  homeTitle: "Piccoli lavori a Cervignano del Friuli",
   description:
-    "Piccole riparazioni, installazioni e lavori domestici in Friuli Venezia Giulia, gestiti con semplicità da un unico team locale e affidabile.",
+    "QUBO organizza piccoli lavori domestici, montaggi e installazioni a Cervignano del Friuli e nelle località vicine, con disponibilità verificata per ogni richiesta.",
   language: "it",
   languageTag: "it-IT",
   locale: "it_IT",

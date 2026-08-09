@@ -1,7 +1,7 @@
 export const SERVICE_AREAS_PAGE_METADATA = {
-  title: "Zone servite in Friuli Venezia Giulia",
+  title: "Zone servite a Cervignano del Friuli",
   description:
-    "Scopri le zone servite da QUBO in Friuli Venezia Giulia e verifica la disponibilità per piccoli lavori, installazioni e riparazioni domestiche.",
+    "Scopri le zone servite da QUBO a Cervignano del Friuli e in Friuli Venezia Giulia e verifica la disponibilità per piccoli lavori, installazioni e riparazioni domestiche.",
   path: "/zone-servite",
 } as const;
 
@@ -10,9 +10,9 @@ export const SERVICE_AREAS_PAGE_CONTENT = {
   breadcrumbHomeLabel: "Home",
   breadcrumbCurrentLabel: "Zone servite",
   eyebrow: "Presenza locale",
-  title: "Piccoli lavori di casa nelle principali città del Friuli Venezia Giulia.",
+  title: "Piccoli lavori di casa a Cervignano del Friuli e nelle località vicine.",
   description:
-    "Partiamo da Udine, Trieste, Pordenone e Gorizia. La copertura viene sempre confermata in base alla località, alla disponibilità e al tipo di intervento richiesto.",
+    "Cervignano del Friuli è il nostro principale punto di riferimento. La copertura viene sempre confermata in base alla località, alla disponibilità e al tipo di intervento richiesto.",
   gridEyebrow: "Città servite",
   gridTitle: "Trova la pagina dedicata alla tua zona.",
   gridDescription:

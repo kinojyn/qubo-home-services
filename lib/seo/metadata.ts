@@ -92,6 +92,7 @@ export function createRootMetadata(): Metadata {
       "riparazioni domestiche",
       "piccoli lavori casa",
       "servizi per la casa",
+      "Cervignano del Friuli",
       "Friuli Venezia Giulia",
     ],
     publisher: siteConfig.name,

@@ -110,7 +110,7 @@ export default function AdminReviewsPage() {
       date: new Date().toISOString().split("T")[0],
       status: "visible",
       pinned: false,
-      badges: ["verified"],
+      badges: [],
       provider: "manual",
     });
     setShowForm(true);
@@ -150,7 +150,7 @@ export default function AdminReviewsPage() {
         updatedAt: now,
         status: formData.status ?? "visible",
         pinned: formData.pinned ?? false,
-        badges: formData.badges ?? ["verified"],
+        badges: formData.badges ?? [],
         avatar: formData.avatar,
         provider: formData.provider ?? "manual",
       };

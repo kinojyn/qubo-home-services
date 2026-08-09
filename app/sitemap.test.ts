@@ -13,6 +13,7 @@ describe("sitemap", () => {
     const expectedPaths = [
       "/",
       "/services",
+      "/richiedi-preventivo",
       "/about",
       "/contact",
       "/gallery",

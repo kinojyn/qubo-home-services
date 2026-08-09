@@ -26,7 +26,7 @@ describe("Services", () => {
       expect(within(serviceList).getByText(service.description)).toBeInTheDocument();
       expect(
         within(serviceList).getByRole("link", {
-          name: `${CONTENT.discoverServiceLabel} ${service.title}`,
+          name: new RegExp(service.title),
         }),
       ).toHaveAttribute("href", `/services/${service.slug}`);
     });
@@ -61,7 +61,7 @@ describe("Services", () => {
     expect(screen.getByText(localizedService.description)).toBeInTheDocument();
     expect(
       screen.getByRole("link", {
-        name: `${SERVICES_CONTENT.en.discoverServiceLabel} ${localizedService.title}`,
+        name: new RegExp(localizedService.title),
       }),
     ).toHaveAttribute("href", `/services/${firstService.slug}`);
   });

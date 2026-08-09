@@ -69,13 +69,7 @@ export function HeroTrustRating() {
 
         if (!cancelled) setData({ averageRating: avgRating, totalReviews, reviewSource: source });
       } catch {
-        if (!cancelled) {
-          setData({
-            averageRating: 4.9,
-            totalReviews: 12,
-            reviewSource: content.reviewSource,
-          });
-        }
+        if (!cancelled) setData({ averageRating: 0, totalReviews: 0, reviewSource: "" });
       }
     }
 

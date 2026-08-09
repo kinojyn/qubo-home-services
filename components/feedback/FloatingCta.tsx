@@ -18,7 +18,7 @@ export function FloatingCta() {
   return (
     <div className="floating-emergency-shell">
       <a
-        aria-label={FLOATING_CTA_CONTENT[locale].ariaLabel}
+        aria-label={`${FLOATING_CTA_CONTENT[locale].label}: ${FLOATING_CTA_CONTENT[locale].ariaLabel}`}
         className="floating-emergency-cta"
         href={getWhatsAppUrl()}
         rel="noopener noreferrer"

@@ -23,8 +23,8 @@ export default function SettingsPage() {
   const [reviewProvider, setReviewProvider] = useState<ReviewProvider>("manual");
   const [reviewProviderMessage, setReviewProviderMessage] = useState("");
 
-  const [heroRating, setHeroRating] = useState("4.9");
-  const [heroReviewCount, setHeroReviewCount] = useState("12");
+  const [heroRating, setHeroRating] = useState("0");
+  const [heroReviewCount, setHeroReviewCount] = useState("0");
   const [heroReviewSource, setHeroReviewSource] = useState("Recensioni clienti");
   const [heroReviewMessage, setHeroReviewMessage] = useState("");
 
@@ -36,8 +36,8 @@ export default function SettingsPage() {
           const data = await res.json();
           setWhatsappNumber(data.whatsappNumber ?? "393201391900");
           setReviewProvider(data.reviewProvider ?? "manual");
-          setHeroRating(String(data.heroRating ?? 4.9));
-          setHeroReviewCount(String(data.heroReviewCount ?? 12));
+          setHeroRating(String(data.heroRating ?? 0));
+          setHeroReviewCount(String(data.heroReviewCount ?? 0));
           setHeroReviewSource(data.heroReviewSource ?? "Recensioni clienti");
         }
       } catch {

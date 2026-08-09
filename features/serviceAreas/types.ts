@@ -1,4 +1,5 @@
-export type ServiceAreaSlug = "udine" | "trieste" | "pordenone" | "gorizia";
+export type ServiceAreaSlug =
+  "cervignano-del-friuli" | "udine" | "trieste" | "pordenone" | "gorizia";
 
 export type ServiceAreaBenefit = {
   description: string;

@@ -28,7 +28,7 @@ export function GalleryLightbox({
   return (
     <Modal
       closeLabel={GALLERY_CONTENT.closeLabel}
-      description="Confronto reale prima e dopo l'intervento."
+      description="Confronto illustrativo prima e dopo l'intervento."
       isOpen
       onClose={onClose}
       size="lg"

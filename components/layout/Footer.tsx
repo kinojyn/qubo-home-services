@@ -8,7 +8,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { siteConfig } from "@/config/site";
 import { useLocale } from "@/contexts/LocaleContext";
-import { FOOTER_CONTENT, FOOTER_LEGAL_LINKS } from "@/locales/footer";
+import { FOOTER_CONTENT, FOOTER_LEGAL_LINKS, FOOTER_RESOURCE_LINKS } from "@/locales/footer";
 import { NAVIGATION_LINKS } from "@/locales/navigation";
 
 const FOOTER_LINK_CLASS_NAME =
@@ -51,6 +51,13 @@ export function Footer({ year = new Date().getFullYear() }: FooterProps) {
                   </Link>
                 </li>
               ))}
+              {FOOTER_RESOURCE_LINKS[locale].map((link) => (
+                <li key={link.href}>
+                  <Link className={FOOTER_LINK_CLASS_NAME} href={link.href}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
 
@@ -66,6 +73,12 @@ export function Footer({ year = new Date().getFullYear() }: FooterProps) {
                 <MapPin aria-hidden="true" className="size-icon-md shrink-0 text-accent" />
                 {content.contactRegion}
               </p>
+              <a className={FOOTER_LINK_CLASS_NAME} href={`tel:${siteConfig.contact.phone}`}>
+                {siteConfig.contact.phoneDisplay}
+              </a>
+              <a className={FOOTER_LINK_CLASS_NAME} href={`mailto:${siteConfig.contact.email}`}>
+                {siteConfig.contact.email}
+              </a>
               <ButtonLink
                 className="w-fit px-4"
                 href="/#preventivo"

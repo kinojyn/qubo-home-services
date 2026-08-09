@@ -17,6 +17,11 @@ export interface FooterLegalLink {
   label: string;
 }
 
+export interface FooterResourceLink {
+  href: string;
+  label: string;
+}
+
 export const FOOTER_CONTENT: Record<Locale, FooterContent> = {
   it: {
     brandDescription:
@@ -75,6 +80,27 @@ export const FOOTER_LEGAL_LINKS: Record<Locale, readonly FooterLegalLink[]> = {
     { href: "/termini", label: "AGB" },
     { href: "/legal-notice", label: "Impressum" },
     { href: "/cookie-preferences", label: "Cookie-Einstellungen" },
+  ],
+};
+
+export const FOOTER_RESOURCE_LINKS: Record<Locale, readonly FooterResourceLink[]> = {
+  it: [
+    { href: "/about", label: "Chi siamo" },
+    { href: "/gallery", label: "Galleria" },
+    { href: "/faq", label: "FAQ" },
+    { href: "/contact", label: "Contatti" },
+  ],
+  en: [
+    { href: "/about", label: "About" },
+    { href: "/gallery", label: "Gallery" },
+    { href: "/faq", label: "FAQ" },
+    { href: "/contact", label: "Contact" },
+  ],
+  de: [
+    { href: "/about", label: "Über uns" },
+    { href: "/gallery", label: "Galerie" },
+    { href: "/faq", label: "FAQ" },
+    { href: "/contact", label: "Kontakt" },
   ],
 };
 

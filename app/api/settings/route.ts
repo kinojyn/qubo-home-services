@@ -17,9 +17,9 @@ export type AppSettings = {
 const DEFAULT_SETTINGS: AppSettings = {
   whatsappNumber: DEFAULT_WHATSAPP_NUMBER,
   reviewProvider: "manual",
-  heroRating: 4.9,
-  heroReviewCount: 12,
-  heroReviewSource: "Recensioni clienti",
+  heroRating: 0,
+  heroReviewCount: 0,
+  heroReviewSource: "",
 };
 
 const settingsSchema = z

@@ -27,6 +27,7 @@ export interface GalleryContent {
   nextLabel: string;
   previewLabel: string;
   openComparisonLabel: (title: string) => string;
+  pageLinkLabel: string;
 }
 
 export const GALLERY_PAGE_METADATA: Record<
@@ -126,39 +127,42 @@ export const GALLERY_CONTENT: Record<Locale, GalleryContent> = {
     eyebrow: "Prima e dopo",
     title: "Il lavoro si vede nei dettagli.",
     description:
-      "Tre esempi reali dei nostri interventi: confronta lo stato iniziale con il risultato finale.",
-    notice: "3 interventi reali · Prima e dopo ogni sistemazione.",
+      "Tre esempi illustrativi: confronta lo stato iniziale con il risultato finale in una vista semplice.",
+    notice: "3 esempi illustrativi · Prima e dopo ogni sistemazione.",
     listLabel: "Anteprima dei lavori prima e dopo",
     closeLabel: "Chiudi la galleria",
     previousLabel: "Mostra il lavoro precedente",
     nextLabel: "Mostra il lavoro successivo",
-    previewLabel: "Confronto reale",
+    previewLabel: "Confronto illustrativo",
     openComparisonLabel: (title) => `Apri il confronto: ${title}`,
+    pageLinkLabel: "Apri la galleria completa",
   },
   en: {
     eyebrow: "Before and after",
     title: "The work shows in the details.",
     description:
-      "The gallery is ready to show real transformations with clear images and instant comparisons.",
-    notice: "3 real projects · Before and after every repair.",
+      "Three illustrative examples: compare the initial state with the final result in a simple view.",
+    notice: "3 illustrative examples · Before and after every repair.",
     listLabel: "Before and after preview",
     closeLabel: "Close gallery",
     previousLabel: "Show previous job",
     nextLabel: "Show next job",
-    previewLabel: "Real comparison",
+    previewLabel: "Illustrative comparison",
     openComparisonLabel: (title) => `Open comparison: ${title}`,
+    pageLinkLabel: "Open the full gallery",
   },
   de: {
     eyebrow: "Vorher und nachher",
     title: "Die Arbeit zeigt sich in den Details.",
     description:
-      "Die Galerie ist bereit, echte Veränderungen mit klaren Bildern und sofortigen Vergleichen zu zeigen.",
-    notice: "3 echte Arbeiten · Vorher und nachher jeder Reparatur.",
+      "Drei illustrative Beispiele: Vergleichen Sie den Ausgangszustand mit dem Ergebnis in einer einfachen Ansicht.",
+    notice: "3 illustrative Beispiele · Vorher und nachher jeder Reparatur.",
     listLabel: "Vorher-Nachher-Vorschau",
     closeLabel: "Galerie schließen",
     previousLabel: "Vorherige Arbeit anzeigen",
     nextLabel: "Nächste Arbeit anzeigen",
-    previewLabel: "Echter Vergleich",
+    previewLabel: "Illustrativer Vergleich",
     openComparisonLabel: (title) => `Vergleich öffnen: ${title}`,
+    pageLinkLabel: "Vollständige Galerie öffnen",
   },
 };

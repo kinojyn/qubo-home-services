@@ -31,9 +31,8 @@ export const GALLERY_PAGE_GUIDE_ITEMS = [
 export const GALLERY_CONTENT = {
   eyebrow: "Prima e dopo",
   title: "Il lavoro si vede nei dettagli.",
-  description:
-    "Tre esempi reali dei nostri interventi: confronta lo stato iniziale con il risultato finale.",
-  notice: "3 interventi reali · Prima e dopo ogni sistemazione.",
+  description: "Tre esempi illustrativi: confronta lo stato iniziale con il risultato finale.",
+  notice: "3 esempi illustrativi · Prima e dopo ogni sistemazione.",
   listLabel: "Anteprima dei lavori prima e dopo",
   closeLabel: "Chiudi la galleria",
   previousLabel: "Mostra il lavoro precedente",

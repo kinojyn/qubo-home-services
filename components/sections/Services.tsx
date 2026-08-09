@@ -106,7 +106,6 @@ export function Services() {
                 >
                   <div className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-[var(--ds-duration-normal)] ease-standard bg-gradient-to-b from-accent/5 to-transparent group-hover:opacity-100 group-focus-within:opacity-100" />
                   <Link
-                    aria-label={`${content.discoverServiceLabel} ${localizedService.title}`}
                     className="relative flex h-full flex-col rounded-2xl p-8 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
                     href={`/services/${service.slug}`}
                   >

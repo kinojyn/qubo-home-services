@@ -14,7 +14,6 @@ import type { Locale } from "@/types/locale";
 import { MOTION_TRANSITIONS } from "@/constants/motion";
 import { useLocale } from "@/contexts/LocaleContext";
 import { TESTIMONIALS_CONTENT } from "@/locales/testimonials";
-import { DEFAULT_REVIEWS } from "@/data/reviews";
 
 const ITEM_VARIANTS: Variants = {
   hidden: {
@@ -109,10 +108,9 @@ export function Testimonials() {
   const shouldReduceMotion = useReducedMotion();
   const transition = shouldReduceMotion ? MOTION_TRANSITIONS.instant : MOTION_TRANSITIONS.section;
 
-  // Render a verified fallback immediately so the section is useful before the
-  // client-side API request completes (or if client hydration is delayed).
-  // The request below replaces these with the reviews saved from the admin area.
-  const [reviews, setReviews] = useState<Review[]>(DEFAULT_REVIEWS);
+  // Only reviews returned from the published store are shown. There is no
+  // synthetic fallback: customer proof must be authentic and consented.
+  const [reviews, setReviews] = useState<Review[]>([]);
   const [serviceFilter, setServiceFilter] = useState("all");
   const [ratingFilter, setRatingFilter] = useState<number>(0);
   const [sortFilter, setSortFilter] = useState<"newest" | "oldest" | "highest">("newest");
@@ -126,10 +124,10 @@ export function Testimonials() {
           const data = await res.json();
           setReviews(data.reviews ?? []);
         } else {
-          setReviews(DEFAULT_REVIEWS);
+          setReviews([]);
         }
       } catch {
-        setReviews(DEFAULT_REVIEWS);
+        setReviews([]);
       } finally {
         setLoaded(true);
       }

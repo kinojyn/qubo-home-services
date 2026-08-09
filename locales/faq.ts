@@ -155,7 +155,7 @@ export const FAQ_ITEMS: Record<Locale, readonly FaqItem[]> = {
       id: "service-area",
       question: "In quali zone operate?",
       answer:
-        "Operiamo in Friuli Venezia Giulia. La disponibilità viene verificata in base alla località e al tipo di intervento richiesto.",
+        "Il nostro principale punto di riferimento è Cervignano del Friuli. Operiamo anche in altre località del Friuli Venezia Giulia quando zona, disponibilità e tipo di intervento lo consentono.",
     },
     {
       id: "estimate",
@@ -193,7 +193,7 @@ export const FAQ_ITEMS: Record<Locale, readonly FaqItem[]> = {
       id: "service-area",
       question: "Which areas do you serve?",
       answer:
-        "We operate in Friuli Venezia Giulia. Availability is checked based on the location and the type of job requested.",
+        "Our main reference point is Cervignano del Friuli. We also serve other Friuli Venezia Giulia localities when the area and type of job allow it.",
     },
     {
       id: "estimate",
@@ -231,7 +231,7 @@ export const FAQ_ITEMS: Record<Locale, readonly FaqItem[]> = {
       id: "service-area",
       question: "In welchen Gebieten sind Sie tätig?",
       answer:
-        "Wir sind in Friaul Julisch Venetien tätig. Die Verfügbarkeit wird je nach Standort und Art der angeforderten Arbeit geprüft.",
+        "Unser wichtigster Bezugspunkt ist Cervignano del Friuli. Wir arbeiten auch in anderen Orten von Friaul Julisch Venetien, wenn Gebiet und Art der Arbeit es zulassen.",
     },
     {
       id: "estimate",

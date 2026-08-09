@@ -65,9 +65,9 @@ export const SERVICE_AREAS_PAGE_METADATA: Record<
   { title: string; description: string; path: string }
 > = {
   it: {
-    title: "Zone servite in Friuli Venezia Giulia",
+    title: "Zone servite a Cervignano del Friuli",
     description:
-      "Scopri le zone servite da QUBO in Friuli Venezia Giulia e verifica la disponibilità per piccoli lavori, installazioni e riparazioni domestiche.",
+      "Scopri le zone servite da QUBO a Cervignano del Friuli e in Friuli Venezia Giulia e verifica la disponibilità per piccoli lavori, installazioni e riparazioni domestiche.",
     path: "/zone-servite",
   },
   en: {
@@ -92,7 +92,7 @@ export const SERVICE_AREAS_PAGE_CONTENT: Record<Locale, ServiceAreasPageContent>
     eyebrow: "Presenza locale",
     title: "Piccoli lavori di casa in Friuli Venezia Giulia, anche nei comuni vicini.",
     description:
-      "I nostri punti di riferimento sono Udine, Trieste, Pordenone e Gorizia, con copertura anche in numerose località vicine. Verifichiamo sempre zona, disponibilità e tipo di intervento prima di confermare.",
+      "Il nostro principale punto di riferimento è Cervignano del Friuli. Operiamo anche in altre località del Friuli Venezia Giulia quando zona, disponibilità e tipo di intervento lo consentono: verifichiamo sempre prima di confermare.",
     heroCtaLabel: "Trova il tuo comune",
     heroCoverageTitle: "Dal comune al preventivo in pochi passaggi",
     heroSteps: ["Cerca la località", "Seleziona il comune", "Continua con i dati già compilati"],
@@ -115,7 +115,7 @@ export const SERVICE_AREAS_PAGE_CONTENT: Record<Locale, ServiceAreasPageContent>
     municipalityTypeLabel: "Comune",
     localityTypeLabel: "Frazione o località",
     dataSourceLabel: "Dati territoriali: Istat e GeoNames",
-    referenceAreasTitle: "Approfondisci le quattro aree di riferimento",
+    referenceAreasTitle: "Approfondisci le aree di riferimento",
     nearbyLocationsLabel: "Comuni vicini",
     noResultsTitle: "La tua località non compare nell'elenco?",
     noResultsDescription:
@@ -132,7 +132,7 @@ export const SERVICE_AREAS_PAGE_CONTENT: Record<Locale, ServiceAreasPageContent>
     eyebrow: "Local presence",
     title: "Small home jobs across Friuli Venezia Giulia, including nearby municipalities.",
     description:
-      "Our reference hubs are Udine, Trieste, Pordenone, and Gorizia, with coverage in many nearby localities. We always confirm the area, availability, and type of job before proceeding.",
+      "Our main reference point is Cervignano del Friuli. We also serve other Friuli Venezia Giulia localities when the area, availability, and type of job allow it; we always confirm first.",
     heroCtaLabel: "Find your municipality",
     heroCoverageTitle: "From municipality to quote in just a few steps",
     heroSteps: [
@@ -159,7 +159,7 @@ export const SERVICE_AREAS_PAGE_CONTENT: Record<Locale, ServiceAreasPageContent>
     municipalityTypeLabel: "Municipality",
     localityTypeLabel: "Hamlet or locality",
     dataSourceLabel: "Territorial data: Istat and GeoNames",
-    referenceAreasTitle: "Explore the four reference areas",
+    referenceAreasTitle: "Explore the reference areas",
     nearbyLocationsLabel: "Nearby municipalities",
     noResultsTitle: "Can't find your locality in the list?",
     noResultsDescription:
@@ -199,7 +199,7 @@ export const SERVICE_AREAS_PAGE_CONTENT: Record<Locale, ServiceAreasPageContent>
     municipalityTypeLabel: "Gemeinde",
     localityTypeLabel: "Ortsteil oder Wohnort",
     dataSourceLabel: "Gebietsdaten: Istat und GeoNames",
-    referenceAreasTitle: "Die vier Referenzgebiete entdecken",
+    referenceAreasTitle: "Die Referenzgebiete entdecken",
     nearbyLocationsLabel: "Nahegelegene Gemeinden",
     noResultsTitle: "Ihr Ort ist nicht in der Liste?",
     noResultsDescription:

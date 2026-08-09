@@ -57,7 +57,7 @@ export const FAQ_ITEMS = [
     id: "service-area",
     question: "In quali zone operate?",
     answer:
-      "Operiamo in Friuli Venezia Giulia. La disponibilità viene verificata in base alla località e al tipo di intervento richiesto.",
+      "Il nostro principale punto di riferimento è Cervignano del Friuli. Operiamo anche in altre località del Friuli Venezia Giulia quando zona, disponibilità e tipo di intervento lo consentono.",
   },
   {
     id: "estimate",
