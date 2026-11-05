@@ -1,0 +1,332 @@
+.landing {
+  /* Campaign palette is scoped here; all other QUBO tokens stay unchanged. */
+  --ad-color-primary: #172943;
+  --ad-color-secondary: #263344;
+  --ad-color-surface: var(--ds-color-white);
+  --ad-color-whatsapp: #25d366;
+  --ad-color-border: color-mix(in srgb, var(--ad-color-primary) 14%, transparent);
+  --ad-color-soft: color-mix(in srgb, var(--ad-color-primary) 3%, var(--ad-color-surface));
+  --ad-color-muted: color-mix(in srgb, var(--ad-color-primary) 74%, var(--ad-color-surface));
+  --ad-heading-size: clamp(var(--ds-font-size-2xl), 6vw, var(--ds-font-size-4xl));
+  --ad-label-size: 0.8125rem;
+  --ad-move-start: var(--ds-space-3);
+  min-height: 100svh;
+  padding: var(--ds-space-6) var(--ds-gutter-mobile) var(--ds-space-8);
+  color: var(--ad-color-primary);
+  background: var(--ad-color-surface);
+  font-family: var(--ds-font-family-body);
+  text-align: center;
+}
+
+.header,
+.main,
+.footer {
+  width: 100%;
+  max-width: var(--ds-size-container-narrow);
+  margin-inline: auto;
+}
+
+.header {
+  display: grid;
+  justify-items: center;
+  gap: var(--ds-space-2);
+}
+
+.header img {
+  width: var(--ds-space-16);
+  height: var(--ds-space-16);
+  object-fit: contain;
+}
+
+.tagline {
+  color: var(--ad-color-muted);
+  font-size: var(--ds-font-size-xs);
+}
+
+.hero {
+  padding-block: var(--ds-space-8);
+  animation: settle var(--ds-duration-slow) var(--ds-ease-out) both;
+}
+
+.eyebrow {
+  margin-bottom: var(--ds-space-3);
+  color: var(--ad-color-muted);
+  font-size: var(--ad-label-size);
+  font-weight: var(--ds-font-weight-semibold);
+  letter-spacing: var(--ds-letter-spacing-wide);
+}
+
+.hero h1 {
+  max-width: var(--ds-size-card-wide);
+  margin-inline: auto;
+  font-family: var(--ds-font-family-heading);
+  font-size: var(--ad-heading-size);
+  font-weight: var(--ds-font-weight-semibold);
+  line-height: var(--ds-line-height-tight);
+  letter-spacing: var(--ds-letter-spacing-tight);
+  text-wrap: balance;
+}
+
+.hero h1 span {
+  white-space: nowrap;
+}
+
+.subtitle {
+  max-width: var(--ds-size-card-wide);
+  margin: var(--ds-space-4) auto var(--ds-space-6);
+  color: var(--ad-color-secondary);
+  font-size: var(--ds-font-size-sm);
+  line-height: var(--ds-line-height-normal);
+  text-wrap: pretty;
+}
+
+.actions {
+  display: grid;
+  gap: var(--ds-space-3);
+  max-width: var(--ds-size-card-wide);
+  margin-inline: auto;
+  text-align: left;
+}
+
+.action {
+  display: flex;
+  min-height: var(--ds-space-24);
+  align-items: center;
+  gap: var(--ds-space-3);
+  padding: var(--ds-space-4);
+  border: var(--ds-border-width-thin) solid var(--ad-color-border);
+  border-radius: var(--ds-radius-md);
+  text-decoration: none;
+  transition:
+    transform var(--ds-duration-fast) var(--ds-ease-out),
+    box-shadow var(--ds-duration-fast) var(--ds-ease-out);
+}
+
+.whatsapp {
+  color: var(--ad-color-primary);
+  background: var(--ad-color-whatsapp);
+  border-color: var(--ad-color-whatsapp);
+  box-shadow: var(--ds-shadow-sm);
+}
+
+.website {
+  color: var(--ad-color-primary);
+  background: var(--ad-color-surface);
+}
+
+.actionIcon {
+  display: flex;
+  flex: 0 0 var(--ds-size-icon-lg);
+  align-items: center;
+}
+
+.actionIcon svg {
+  width: var(--ds-size-icon-lg);
+  height: var(--ds-size-icon-lg);
+}
+
+.actionText {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  gap: var(--ds-space-1);
+}
+
+.actionText strong {
+  font-size: var(--ds-font-size-xs);
+  font-weight: var(--ds-font-weight-bold);
+  line-height: var(--ds-line-height-normal);
+}
+
+.actionText > span {
+  font-size: var(--ad-label-size);
+  line-height: var(--ds-line-height-normal);
+}
+
+.arrow {
+  width: var(--ds-size-icon-sm);
+  height: var(--ds-size-icon-sm);
+  flex-shrink: 0;
+}
+
+.action:hover {
+  box-shadow: var(--ds-shadow-md);
+  transform: translateY(var(--ds-motion-hover-lift));
+}
+
+.action:active {
+  transform: scale(var(--ds-motion-button-press));
+}
+
+.landing a:focus-visible,
+.landing button:focus-visible {
+  outline: var(--ds-border-width-focus) solid var(--ad-color-primary);
+  outline-offset: var(--ds-space-1);
+}
+
+.main:focus {
+  outline: none;
+}
+
+.main > .services {
+  padding: var(--ds-space-6) var(--ds-space-4);
+  background: var(--ad-color-soft);
+  background-image: none;
+  border: var(--ds-border-width-thin) solid var(--ad-color-border);
+  border-radius: var(--ds-radius-lg);
+  box-shadow: none;
+  animation: reveal var(--ds-duration-slow) var(--ds-ease-out) both;
+}
+
+.services h2 {
+  font-size: var(--ds-font-size-md);
+  font-weight: var(--ds-font-weight-semibold);
+  letter-spacing: var(--ds-letter-spacing-tight);
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--ds-space-6) var(--ds-space-3);
+  margin-top: var(--ds-space-6);
+}
+
+.serviceGrid li {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: var(--ds-space-2);
+  color: var(--ad-color-secondary);
+  font-size: var(--ds-font-size-xs);
+  line-height: var(--ds-line-height-normal);
+}
+
+.serviceGrid svg {
+  width: var(--ds-size-icon-lg);
+  height: var(--ds-size-icon-lg);
+  stroke-width: 1.5;
+}
+
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--ds-space-3) var(--ds-space-6);
+  padding-block: var(--ds-space-6);
+}
+
+.benefits li {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-1);
+  font-size: var(--ad-label-size);
+}
+
+.benefits svg,
+.location svg {
+  width: var(--ds-size-icon-sm);
+  height: var(--ds-size-icon-sm);
+  flex-shrink: 0;
+}
+
+.footer {
+  padding-top: var(--ds-space-6);
+  border-top: var(--ds-border-width-thin) solid var(--ad-color-border);
+  color: var(--ad-color-muted);
+  font-size: var(--ds-font-size-xs);
+  line-height: var(--ds-line-height-relaxed);
+}
+
+.footerBrand {
+  color: var(--ad-color-primary);
+  font-weight: var(--ds-font-weight-bold);
+  letter-spacing: var(--ds-letter-spacing-wide);
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--ds-space-1);
+  margin-top: var(--ds-space-2);
+}
+
+.consent {
+  margin-top: var(--ds-space-4);
+  font-size: var(--ad-label-size);
+}
+
+.legalLinks,
+.consentNotice > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ds-space-2) var(--ds-space-4);
+}
+
+.consent a,
+.consent button {
+  display: inline-flex;
+  min-height: var(--ds-size-touch-target-min);
+  align-items: center;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: var(--ds-space-1);
+  cursor: pointer;
+}
+
+.consentNotice {
+  margin-top: var(--ds-space-3);
+  padding: var(--ds-space-4);
+  background: var(--ad-color-soft);
+  border-radius: var(--ds-radius-sm);
+}
+
+.skipLink {
+  position: absolute;
+  top: var(--ds-space-3);
+  left: var(--ds-space-3);
+  padding: var(--ds-space-3);
+  background: var(--ad-color-surface);
+  transform: translateY(calc(-1 * var(--ds-space-40)));
+}
+
+.skipLink:focus {
+  transform: none;
+}
+
+/* Keep the hero visible from first paint; opacity-zero heroes delay LCP. */
+@keyframes settle {
+  from {
+    transform: translateY(var(--ad-move-start));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(var(--ad-move-start));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero,
+  .main > .services {
+    animation: none;
+  }
+  .action {
+    transition: none;
+  }
+  .action:hover,
+  .action:active {
+    transform: none;
+  }
+}

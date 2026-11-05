@@ -5,6 +5,7 @@ import { VercelAnalytics } from "@/components/analytics/VercelAnalytics";
 import { CookieConsentBanner } from "@/components/layout/CookieConsentBanner";
 import { CookiePreferencesModal } from "@/components/layout/CookiePreferencesModal";
 import { Footer } from "@/components/layout/Footer";
+import { SiteChrome } from "@/components/layout/SiteChrome";
 import { Navbar } from "@/components/navigation/Navbar";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { CookieProvider } from "@/contexts/CookieContext";
@@ -29,13 +30,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <SettingsProvider>
             <CookieProvider>
               <JsonLd data={createSiteStructuredData()} />
-              <ScrollProgress />
-              <FloatingOrbs />
-              <Navbar />
+              <SiteChrome>
+                <ScrollProgress />
+                <FloatingOrbs />
+                <Navbar />
+              </SiteChrome>
               {children}
-              <FloatingCta />
-              <Footer />
-              <CookieConsentBanner />
+              <SiteChrome>
+                <FloatingCta />
+                <Footer />
+                <CookieConsentBanner />
+              </SiteChrome>
               <CookiePreferencesModal />
               <VercelAnalytics />
             </CookieProvider>
