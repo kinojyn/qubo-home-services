@@ -62,6 +62,7 @@ export const PRIVACY_DOCUMENT: LegalDocument = {
         "Questo sito utilizza cookie e tecnologie di tracciamento per garantire il corretto funzionamento delle pagine e migliorare l'esperienza di navigazione.",
         "Per informazioni dettagliate sui cookie utilizzati, consulta la nostra Informativa sui Cookie disponibile nella sezione dedicata.",
         "L'utente può gestire liberamente le proprie preferenze sui cookie tramite il pannello delle preferenze accessibile dal sito.",
+        "Dal 5 novembre 2026, solo con il consenso alla categoria marketing, utilizziamo Meta Pixel (Meta Platforms Ireland Limited) per misurare le visite al sito e i clic sui pulsanti della pagina pubblicitaria. Meta può ricevere indirizzi delle pagine e informazioni tecniche del browser e associare gli eventi ai propri identificatori. Non inviamo intenzionalmente contenuti dei moduli, email o numeri di telefono e non abilitiamo il matching avanzato automatico. Un clic su WhatsApp è un'interazione di contatto, non una richiesta o un ordine confermato. Puoi revocare il consenso da Preferenze cookie. Informazioni Meta: https://www.facebook.com/privacy/policy/ e https://www.facebook.com/policies/cookies/.",
       ],
     },
     {
@@ -158,6 +159,14 @@ export const COOKIE_DOCUMENT: LegalDocument = {
   eyebrow: "Cookie",
   path: "/cookie-policy",
   sections: [
+    {
+      title: "Meta Pixel — aggiornamento 5 novembre 2026",
+      paragraphs: [
+        "Fornitore: Meta Platforms Ireland Limited. Categoria: marketing, disattivata fino al consenso. Finalità: misurazione delle visite (PageView) e delle interazioni sulla pagina /pubblicita (whatsapp_click, Contact e website_click). Questi eventi non attestano l'invio di una richiesta o l'acquisto di un servizio.",
+        "Il Pixel può utilizzare cookie come _fbp e _fbc e trattare indirizzi delle pagine, identificatori e dati tecnici del browser. Le informazioni e le durate applicate dal fornitore sono disponibili su https://www.facebook.com/policies/cookies/. Non utilizziamo Conversions API né il matching avanzato automatico per questa integrazione.",
+        "Il codice Meta viene caricato solo dopo il consenso marketing. Puoi rifiutare o revocare questa scelta tramite Preferenze cookie: i successivi eventi vengono bloccati e i cookie Meta accessibili al sito vengono rimossi. Non possiamo eliminare cookie di altri domini o annullare eventi già ricevuti da Meta. Per il trattamento dei dati da parte di Meta: https://www.facebook.com/privacy/policy/.",
+      ],
+    },
     {
       title: "Cosa sono i cookie",
       paragraphs: [
